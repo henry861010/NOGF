@@ -1,0 +1,1 @@
+how to set the channel of the HC-12 https://forum.arduino.cc/t/hc-12-high-low-programming/407131/2
