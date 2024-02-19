@@ -1,1 +1,4 @@
-how to set the channel of the HC-12 https://forum.arduino.cc/t/hc-12-high-low-programming/407131/2
+how to set the channel of the HC-12 
+1. simple introduction: https://forum.arduino.cc/t/hc-12-high-low-programming/407131/2   
+2. more detail: https://www.allaboutcircuits.com/projects/understanding-and-implementing-the-hc-12-wireless-transceiver-module/
+3. Secure Wireless Communication in MANETs using HC-12 Module: https://github.com/Sankalpjadhav/Secure-Wireless-Communication-in-MANETs-using-HC-12-Module
