@@ -5,8 +5,6 @@
 #define MS3_PIN 6
 #define STEPS_PER_REVOLUTION 200 // Full steps per revolution for a 1.8-degree step motor
 
-float headingNow = 0;
-
 /*
   (1/1):  MS1 = 0, MS2 = 0, MS3 = 0   => 000 ~ 0x00
   (1/2):  MS1 = 1, MS2 = 0, MS3 = 0   => 100 ~ 0x04
@@ -15,11 +13,11 @@ float headingNow = 0;
   (1/16): MS1 = 1, MS2 = 1, MS3 = 1   => 111 ~ 0x07
 */
 
-void rotateMotor(float desiredAngle) {
+void rotateMotor(double desiredAngle) {
     int dirPinState = desiredAngle >= 0 ? HIGH : LOW;
     digitalWrite(DIR_PIN, dirPinState);
     
-    float fullStepAngle = 1.8; // Motor's full step angle
+    double fullStepAngle = 1.8; // Motor's full step angle
     desiredAngle = abs(desiredAngle); // Ensure angle is positive for calculation
 
     // Example: Rotate with different microstepping resolutions
@@ -29,7 +27,7 @@ void rotateMotor(float desiredAngle) {
         digitalWrite(MS2_PIN, microsteps[i] & 0x02); // Set MS2
         digitalWrite(MS3_PIN, microsteps[i] & 0x01); // Set MS3
 
-        float effectiveStepAngle = fullStepAngle / (1<<i);
+        double effectiveStepAngle = fullStepAngle / (1<<i);
         int steps = (int)(desiredAngle / effectiveStepAngle);
         for (int step = 0; step < steps; step++) {
           Serial.print("*");
