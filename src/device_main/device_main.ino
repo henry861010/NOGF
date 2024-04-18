@@ -84,7 +84,7 @@ void rotateMotor(double desiredAngle) {
     double fullStepAngle = 1.8; // Motor's full step angle
     desiredAngle = abs(desiredAngle); // Ensure angle is positive for calculation
 
-    // Example: Rotate with different microstepping resolutions
+    // Rotate with different microstepping resolutions
     int microsteps[4] = {0, 4, 2, 6}; // Array of microstepping resolutions 1/1, 1/2, 1/4, 1/8
     for (int i = 0; i < 4; i++) {
         digitalWrite(MS1_PIN, microsteps[i] & 0x04); // Set MS1
