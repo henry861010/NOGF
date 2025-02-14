@@ -1,3 +1,0 @@
-https://github.com/mikalhart/TinyGPSPlus/tree/master
-https://github.com/sandeepmistry/arduino-LoRa/blob/master/examples/LoRaReceiverCallback/LoRaReceiverCallback.ino
-https://github.com/pololu/lsm303-arduino/blob/master/LSM303.h
