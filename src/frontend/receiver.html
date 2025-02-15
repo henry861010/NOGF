@@ -38,6 +38,7 @@
 
     <script>
         let ws;
+        let ip = "57.181.243.204";
 
         function connectWebSocket() {
             const client_id = document.getElementById("client_id").value;
@@ -46,7 +47,7 @@
                 return;
             }
 
-            ws = new WebSocket(`ws://localhost:8000/ws/${client_id}/receiver`);
+            ws = new WebSocket(`ws://${ip}:8000/ws/${client_id}/receiver`);
 
             ws.onopen = function() {
                 addMessage("Connected to WebSocket server");
