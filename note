@@ -1,0 +1,15 @@
+
+暫時可以用ws而不用wss，未來還是要申請wss（這樣在apple store上架才比較好過）
+* https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/沒有-s-的-http-還可以連線嗎-29235037e161
+
+Info.list
+1. Location
+	project’s target -> info.
+	(1) add ‘Privacy — Location Always Usage Description’ 
+	(2) add ‘Privacy — Location Always and When In Use Usage Description’ 
+	(3) add ‘Privacy — Location When In Use Usage Description’ 
+
+2. WS/Http without SSL
+	project’s target -> info.
+	(1) add ‘App Transport Security Settings‘
+		(1-1) add ‘Allow Arbitrary Loads‘

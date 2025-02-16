@@ -20,10 +20,15 @@ class ConnectionManager:
             role2 = "receiver"
 
         if role2 not in self.pair[pair_id]:
-            await websocket.send_text(f"there is no {role2} for pair {pair_id}")
+            message = f'there is no {role2} for pair {pair_id}'
+            await websocket.send_text(f'{{"message": "{message}"}}')
+            
         else:
-            await websocket.send_text(f"{role2} is ready !!!")
-            await self.pair[pair_id][role2].send_text(f"{role} is ready !!!")
+            message = f"{role2} is ready !!!"
+            await websocket.send_text(f'{{"message": "{message}"}}')
+
+            message = f"{role} is ready !!!"
+            await self.pair[pair_id][role2].send_text(f'{{"message": "{message}"}}')
 
     async def disconnect(self, websocket: WebSocket, pair_id: str, role: str):
         self.pair[pair_id].pop(role)
@@ -34,7 +39,9 @@ class ConnectionManager:
                 role2 = "sender"
             else:
                 role2 = "receiver"
-            await self.pair[pair_id][role2].send_text(f"{role} leave the cnannel")
+            
+            message = f"{role} leave the cnannel"
+            await self.pair[pair_id][role2].send_text(f'{{"message": "{message}"}}')
 
     async def transmit(self, message: str, pair_id: str, role: str):
         if role == "receiver":
@@ -45,7 +52,8 @@ class ConnectionManager:
         if role2 in self.pair[pair_id]:
             await self.pair[pair_id][role2].send_text(message)
         else:
-            await self.pair[pair_id][role].send_text(f"the {role2} is not in the channel")
+            message = f"the {role2} is not in the channel"
+            await self.pair[pair_id][role].send_text(f'{{"message": "{message}"}}')
 
 manager = ConnectionManager()
 
