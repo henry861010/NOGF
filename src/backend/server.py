@@ -14,27 +14,39 @@ class ConnectionManager:
             self.pair[pair_id] = {}
         self.pair[pair_id][role] = websocket
 
-        ### sender
-        if "sender" == role:
-            if "receiver" not in self.pair[pair_id]:
-                await websocket.send_text(f"there is no receiver for pair {pair_id}")
-            else:
-                await websocket.send_text(f"receiver is ready !!!")
-        ### receiver
-        elif "receiver" == role:
-            if "sender" not in self.pair[pair_id]:
-                await websocket.send_text(f"there is no sender for pair {pair_id}")
-            else:
-                await websocket.send_text(f"sender is ready !!!")
-
-    def disconnect(self, websocket: WebSocket, pair_id: str, role: str):
-        self.pair[pair_id][role] = None
-
-    async def transmit(self, message: str, pair_id: str):
-        if "receiver" not in self.pair[pair_id]:
-            await self.pair[pair_id]["sender"].send_text(f"there is no receiver for pair {pair_id}")
+        if role == "receiver":
+            role2 = "sender"
         else:
-            await self.pair[pair_id]["receiver"].send_text(message)
+            role2 = "receiver"
+
+        if role2 not in self.pair[pair_id]:
+            await websocket.send_text(f"there is no {role2} for pair {pair_id}")
+        else:
+            await websocket.send_text(f"{role2} is ready !!!")
+            await self.pair[pair_id][role2].send_text(f"{role} is ready !!!")
+
+    async def disconnect(self, websocket: WebSocket, pair_id: str, role: str):
+        self.pair[pair_id].pop(role)
+        if len(self.pair[pair_id]) == 0:
+            self.pair.pop(pair_id)
+        else:
+            if role == "receiver":
+                role2 = "sender"
+            else:
+                role2 = "receiver"
+            await self.pair[pair_id][role2].send_text(f"{role} leave the cnannel")
+
+    async def transmit(self, message: str, pair_id: str, role: str):
+        if role == "receiver":
+            role2 = "sender"
+        else:
+            role2 = "receiver"
+
+        if role2 in self.pair[pair_id]:
+            await self.pair[pair_id][role2].send_text(message)
+        else:
+            await self.pair[pair_id][role].send_text(f"the {role2} is not in the channel")
+
 manager = ConnectionManager()
 
 @app.websocket("/ws/{client_id}/{role}")
@@ -44,9 +56,9 @@ async def websocket_endpoint(websocket: WebSocket, client_id: str, role: str):
     try:
         while True:
             message = await websocket.receive_text()
-            await manager.transmit(message, client_id)
+            await manager.transmit(message, client_id, role)
     except WebSocketDisconnect:
-        manager.disconnect(websocket, client_id, role)
+       await  manager.disconnect(websocket, client_id, role)
 
 if __name__ == "__main__":
     import uvicorn
