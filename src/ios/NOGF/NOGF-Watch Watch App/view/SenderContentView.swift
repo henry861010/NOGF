@@ -5,14 +5,12 @@
 //  Created by henry on 2025/3/19.
 //
 
-
 //
 //  SenderContentView.swift
 //  NOGF
 //
 //  Created by henry on 2025/3/1.
 //
-
 
 //
 //  SenderContentView.swift
@@ -36,21 +34,15 @@ struct SenderContentView: View {
 
     var body: some View {
         VStack {
-            VStack {
+            VStack(alignment: .leading) {
                 if let location = model.location {
-                    Text("Latitude: \(location.latitude)")
-                    Text("Longitude: \(location.longitude)")
+                    Text("Lat: \(String(format: "%.3f", location.latitude))")
+                    Text("Lon: \(String(format: "%.3f", location.longitude))")
                 } else {
-                    Text("Waiting for location...")
-                        .foregroundColor(.black)
+                    Text("Lat: ---")
+                    Text("Lon: ---")
                 }
             }
-            .padding()
-
-            Text("message: \(model.ws_message ?? "---")")
-                .padding()
-
-            Text("connect to server successfully")
                 .focusable()
                 .digitalCrownRotation(
                     $crownValue, from: 0, through: 10, by: 1,

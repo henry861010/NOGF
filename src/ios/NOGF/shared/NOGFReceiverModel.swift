@@ -9,7 +9,7 @@ import CoreLocation
 
 class NOGFReceiverModel: ObservableObject {
     let locationManager = LocationManager()
-    let webSocketManager = WebSocketManager("receiver")
+    let webSocketManager = WebSocketManager("ws://127.0.0.1:8000/receiver", "1")
     let bluetoothManager = BluetoothManager()
     #if os(iOS)
         let cameraManager = CameraManager()

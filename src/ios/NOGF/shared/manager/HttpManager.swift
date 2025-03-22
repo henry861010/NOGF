@@ -35,7 +35,7 @@ class HttpManager: ObservableObject {
             if let data = data, let responseStr = String(data: data, encoding: .utf8)
             {
                 DispatchQueue.main.async {
-                    print("Response: \(responseStr)")
+                    //print("Response: \(responseStr)")
                 }
             }
         }.resume()

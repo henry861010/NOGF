@@ -24,6 +24,7 @@ class WebSocketManager: ObservableObject {
     private let urlSession: URLSession
     private var webSocketTask: URLSessionWebSocketTask?
     private var baseURL: URL
+    private var token: String
     
     private var retryDelay: TimeInterval = 1.0
     private let maxRetryDelay: TimeInterval = 30.0
@@ -39,8 +40,9 @@ class WebSocketManager: ObservableObject {
     }()
     
     
-    init(_ role: String) {
-        self.baseURL = URL(string: "ws://57.181.243.204:8000/ws/1/\(role)")!
+    init(_ url: String, _ token: String) {
+        self.token = token
+        self.baseURL = URL(string: "\(url)?token=\(token)")!
         self.configuration = URLSessionConfiguration.ephemeral
         //        configuration.allowsCellularAccess = true
         // configuration.waitsForConnectivity = true

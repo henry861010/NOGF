@@ -20,7 +20,8 @@ import CoreLocation
 
 class NOGFSenderModel: ObservableObject {
     let locationManager = LocationManager()
-    let httpManager = HttpManager("ws://57.181.243.204:8000/", "1")
+    //let httpManager = HttpManager("ws://57.181.243.204:8000/", "1")
+    let httpManager = HttpManager("http://127.0.0.1:8000/sender", "1")
     
     private var cancellables = Set<AnyCancellable>()
     

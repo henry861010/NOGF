@@ -45,6 +45,7 @@
         let ws;
         //let ip = "57.181.243.204";
         let ip = "localhost";
+        console.log("~~~~~~")
 
         function connectWebSocket() {
             const client_id = document.getElementById("client_id").value;
@@ -61,11 +62,10 @@
 
             ws.onmessage = function (event) {
                 try {
-                    const json_obj = JSON.parse(event.data);
                     let old_time = new Date(json_obj.timestamp)
                     let now_time = new Date()
                     let latency = now_time - old_time
-                    addMessage(`latitude: ${json_obj.latitude}, longitude: ${json_obj.longitude}, latency: ${latency}`);
+                    //addMessage(`message: ${event.data}, latency: ${latency}`);
                     addMessage(`old_time: ${old_time}, now_time: ${now_time}`);
                 } catch (error) {
                     addMessage(event.data);
