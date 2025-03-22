@@ -1,4 +1,5 @@
 
+iOS
 暫時可以用ws而不用wss，未來還是要申請wss（這樣在apple store上架才比較好過）
 * https://medium.com/彼得潘的-swift-ios-app-開發問題解答集/沒有-s-的-http-還可以連線嗎-29235037e161
 
@@ -13,3 +14,17 @@ Info.list
 	project’s target -> info.
 	(1) add ‘App Transport Security Settings‘
 		(1-1) add ‘Allow Arbitrary Loads‘
+
+3. BLE
+	project's target -> info
+	(1) add 'Privacy — Bluetooth Peripheral Usage Description’
+	(2) add ‘Privacy — Bluetooth Always Usage Description’
+4. Photo library & camera
+	project's target -> info
+	(1) add 'Privacy - Photo Library Usage Description'
+	(2) add 'Privacy - Camera Usage Description'
+Reference: https://stackoverflow.com/questions/39465687/nscamerausagedescription-in-ios-10-0-runtime-crash
+
+Arduino
+1. A4988
+https://www.pololu.com/product/1182

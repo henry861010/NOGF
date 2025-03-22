@@ -1,72 +1,65 @@
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
-from typing import List
+'''
+    run: uvicorn server:app --host 0.0.0.0 --port 8000 --reload
+    install:
+        (1) pip install "uvicorn[standard]"
+        (2) pip install fastapi 
+        (3) pip install uvicorn 
+'''
+
+from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect, Header, Query, HTTPException, Response
+from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # or specify your frontend URL e.g., ["http://localhost:3000"]
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows POST, GET, OPTIONS, etc.
+    allow_headers=["*"],  # Allows custom headers like Authorization
+)
 
 class ConnectionManager:
-    """Manages multiple WebSocket connections."""
     def __init__(self):
         self.pair = {}
 
-    async def connect(self, websocket: WebSocket, pair_id: str, role: str):
+    async def start_session(self, websocket: WebSocket, token: str):
         await websocket.accept()
-        if not pair_id in self.pair:
-            self.pair[pair_id] = {}
-        self.pair[pair_id][role] = websocket
+        self.pair[token] = websocket
 
-        if role == "receiver":
-            role2 = "sender"
-        else:
-            role2 = "receiver"
+        try:
+            while True:
+                data = await websocket.receive_text()
+                #await websocket.send_text(f"Echo: {data}")
+                print(data)
+        except WebSocketDisconnect:
+            del self.pair[token]
 
-        if role2 not in self.pair[pair_id]:
-            message = f'there is no {role2} for pair {pair_id}'
-            await websocket.send_text(f'{{"message": "{message}"}}')
+    async def push(self, token: str, location: str):
+        if token in self.pair:
+            await self.pair[token].send_text(location)
             
-        else:
-            message = f"{role2} is ready !!!"
-            await websocket.send_text(f'{{"message": "{message}"}}')
-
-            message = f"{role} is ready !!!"
-            await self.pair[pair_id][role2].send_text(f'{{"message": "{message}"}}')
-
-    async def disconnect(self, websocket: WebSocket, pair_id: str, role: str):
-        self.pair[pair_id].pop(role)
-        if len(self.pair[pair_id]) == 0:
-            self.pair.pop(pair_id)
-        else:
-            if role == "receiver":
-                role2 = "sender"
-            else:
-                role2 = "receiver"
-            
-            message = f"{role} leave the cnannel"
-            await self.pair[pair_id][role2].send_text(f'{{"message": "{message}"}}')
-
-    async def transmit(self, message: str, pair_id: str, role: str):
-        if role == "receiver":
-            role2 = "sender"
-        else:
-            role2 = "receiver"
-
-        if role2 in self.pair[pair_id]:
-            await self.pair[pair_id][role2].send_text(message)
-        else:
-            message = f"the {role2} is not in the channel"
-            await self.pair[pair_id][role].send_text(f'{{"message": "{message}"}}')
+class Message(BaseModel):
+    message: str
 
 manager = ConnectionManager()
 
-@app.websocket("/ws/{client_id}/{role}")
-async def websocket_endpoint(websocket: WebSocket, client_id: str, role: str):
-    """Handles WebSocket connections for clients."""
-    await manager.connect(websocket, client_id, role)
-    try:
-        while True:
-            message = await websocket.receive_text()
-            await manager.transmit(message, client_id, role)
-    except WebSocketDisconnect:
-       await  manager.disconnect(websocket, client_id, role)
+@app.post("/sender")
+async def handle_post(payload: Message, authorization: str = Header(...), ):
+    ### verify the token
+    #if verify_token(authorization):
+    
+    await manager.push(authorization, payload.message)
+    return Response(status_code=204)
+
+
+### http: ws://yourserver.com/ws?token=CLIENT_ABC_123
+@app.websocket("/receiver")
+async def gps_relay_server(websocket: WebSocket, token: str = Query(...)):
+    ### verify the token
+    #if verify_token(token):
+    
+    await manager.start_session(websocket, token)
 
 if __name__ == "__main__":
     import uvicorn

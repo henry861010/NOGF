@@ -1,0 +1,596 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA93D1072D7330B9006A4CF0 /* NOGFSenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93D1062D7330A7006A4CF0 /* NOGFSenderModel.swift */; };
+		BA93D11A2D73322A006A4CF0 /* NOGFReceiverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93D1092D73310E006A4CF0 /* NOGFReceiverModel.swift */; };
+		BACE63802D8B1B210009764A /* NOGF-Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = BACE63732D8B1B200009764A /* NOGF-Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BACE638D2D8B1C190009764A /* NOGFSenderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93D1062D7330A7006A4CF0 /* NOGFSenderModel.swift */; };
+		BACE638E2D8B1C240009764A /* NOGFReceiverModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA93D1092D73310E006A4CF0 /* NOGFReceiverModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BACE637E2D8B1B210009764A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA93D0D42D732FEB006A4CF0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BACE63722D8B1B200009764A;
+			remoteInfo = "NOGF-Watch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BA93D1022D73302B006A4CF0 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				BACE63802D8B1B210009764A /* NOGF-Watch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		BA93D0DC2D732FEB006A4CF0 /* NOGF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NOGF.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA93D1062D7330A7006A4CF0 /* NOGFSenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOGFSenderModel.swift; sourceTree = "<group>"; };
+		BA93D1092D73310E006A4CF0 /* NOGFReceiverModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NOGFReceiverModel.swift; sourceTree = "<group>"; };
+		BACE63732D8B1B200009764A /* NOGF-Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOGF-Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		BA31A4242D8AFD3300014AFA /* Exceptions for "NOGF" folder in "NOGF" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = BA93D0DB2D732FEB006A4CF0 /* NOGF */;
+		};
+		BA93D11E2D733241006A4CF0 /* Exceptions for "manager" folder in "NOGF" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				BluetoothManager.swift,
+				CameraManager.swift,
+				HttpManager.swift,
+				LocationManager.swift,
+				PhotoLibraryManager.swift,
+				WebSocketManager.swift,
+			);
+			target = BA93D0DB2D732FEB006A4CF0 /* NOGF */;
+		};
+		BACE63902D8B1D0B0009764A /* Exceptions for "manager" folder in "NOGF-Watch Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				BluetoothManager.swift,
+				HttpManager.swift,
+				LocationManager.swift,
+				WebSocketManager.swift,
+			);
+			target = BACE63722D8B1B200009764A /* NOGF-Watch Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BA93D0DE2D732FEB006A4CF0 /* NOGF */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BA31A4242D8AFD3300014AFA /* Exceptions for "NOGF" folder in "NOGF" target */,
+			);
+			path = NOGF;
+			sourceTree = "<group>";
+		};
+		BA93D1052D733063006A4CF0 /* manager */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				BA93D11E2D733241006A4CF0 /* Exceptions for "manager" folder in "NOGF" target */,
+				BACE63902D8B1D0B0009764A /* Exceptions for "manager" folder in "NOGF-Watch Watch App" target */,
+			);
+			path = manager;
+			sourceTree = "<group>";
+		};
+		BA93D1332D73358D006A4CF0 /* model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = model;
+			sourceTree = "<group>";
+		};
+		BA93D1372D73379F006A4CF0 /* view */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = view;
+			sourceTree = "<group>";
+		};
+		BACE63742D8B1B200009764A /* NOGF-Watch Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "NOGF-Watch Watch App";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA93D0D92D732FEB006A4CF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BACE63702D8B1B200009764A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA93D0D32D732FEB006A4CF0 = {
+			isa = PBXGroup;
+			children = (
+				BA93D1032D733043006A4CF0 /* shared */,
+				BA93D0DE2D732FEB006A4CF0 /* NOGF */,
+				BACE63742D8B1B200009764A /* NOGF-Watch Watch App */,
+				BA93D0DD2D732FEB006A4CF0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA93D0DD2D732FEB006A4CF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA93D0DC2D732FEB006A4CF0 /* NOGF.app */,
+				BACE63732D8B1B200009764A /* NOGF-Watch Watch App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA93D1032D733043006A4CF0 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				BA93D1372D73379F006A4CF0 /* view */,
+				BA93D1332D73358D006A4CF0 /* model */,
+				BA93D1062D7330A7006A4CF0 /* NOGFSenderModel.swift */,
+				BA93D1092D73310E006A4CF0 /* NOGFReceiverModel.swift */,
+				BA93D1052D733063006A4CF0 /* manager */,
+			);
+			path = shared;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA93D0DB2D732FEB006A4CF0 /* NOGF */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA93D0EA2D732FEB006A4CF0 /* Build configuration list for PBXNativeTarget "NOGF" */;
+			buildPhases = (
+				BA93D0D82D732FEB006A4CF0 /* Sources */,
+				BA93D0D92D732FEB006A4CF0 /* Frameworks */,
+				BA93D0DA2D732FEB006A4CF0 /* Resources */,
+				BA93D1022D73302B006A4CF0 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BACE637F2D8B1B210009764A /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				BA93D0DE2D732FEB006A4CF0 /* NOGF */,
+				BA93D1332D73358D006A4CF0 /* model */,
+				BA93D1372D73379F006A4CF0 /* view */,
+			);
+			name = NOGF;
+			packageProductDependencies = (
+			);
+			productName = NOGF;
+			productReference = BA93D0DC2D732FEB006A4CF0 /* NOGF.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BACE63722D8B1B200009764A /* NOGF-Watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BACE63812D8B1B210009764A /* Build configuration list for PBXNativeTarget "NOGF-Watch Watch App" */;
+			buildPhases = (
+				BACE636F2D8B1B200009764A /* Sources */,
+				BACE63702D8B1B200009764A /* Frameworks */,
+				BACE63712D8B1B200009764A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BA93D1332D73358D006A4CF0 /* model */,
+				BA93D1372D73379F006A4CF0 /* view */,
+				BACE63742D8B1B200009764A /* NOGF-Watch Watch App */,
+			);
+			name = "NOGF-Watch Watch App";
+			packageProductDependencies = (
+			);
+			productName = "NOGF-Watch Watch App";
+			productReference = BACE63732D8B1B200009764A /* NOGF-Watch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA93D0D42D732FEB006A4CF0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					BA93D0DB2D732FEB006A4CF0 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					BACE63722D8B1B200009764A = {
+						CreatedOnToolsVersion = 16.2;
+					};
+				};
+			};
+			buildConfigurationList = BA93D0D72D732FEB006A4CF0 /* Build configuration list for PBXProject "NOGF" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA93D0D32D732FEB006A4CF0;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = BA93D0DD2D732FEB006A4CF0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA93D0DB2D732FEB006A4CF0 /* NOGF */,
+				BACE63722D8B1B200009764A /* NOGF-Watch Watch App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA93D0DA2D732FEB006A4CF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BACE63712D8B1B200009764A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA93D0D82D732FEB006A4CF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA93D1072D7330B9006A4CF0 /* NOGFSenderModel.swift in Sources */,
+				BA93D11A2D73322A006A4CF0 /* NOGFReceiverModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BACE636F2D8B1B200009764A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BACE638E2D8B1C240009764A /* NOGFReceiverModel.swift in Sources */,
+				BACE638D2D8B1C190009764A /* NOGFSenderModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BACE637F2D8B1B210009764A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BACE63722D8B1B200009764A /* NOGF-Watch Watch App */;
+			targetProxy = BACE637E2D8B1B210009764A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BA93D0E82D732FEB006A4CF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BA93D0E92D732FEB006A4CF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA93D0EB2D732FEB006A4CF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NOGF/Preview Content\"";
+				DEVELOPMENT_TEAM = T9HC58S973;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NOGF/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "connect to arduino";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "connect to arduino";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "locate the user";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "locate the user";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "locate the user";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = NOGF.NOGF;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA93D0EC2D732FEB006A4CF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NOGF/Preview Content\"";
+				DEVELOPMENT_TEAM = T9HC58S973;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NOGF/Info.plist;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "connect to arduino";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "connect to arduino";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "locate the user";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "locate the user";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "locate the user";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = NOGF.NOGF;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BACE63822D8B1B210009764A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NOGF-Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = T9HC58S973;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NOGF-Watch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NOGF-Watch";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = NOGF.NOGF;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = NOGF.NOGF.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Debug;
+		};
+		BACE63832D8B1B210009764A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NOGF-Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = T9HC58S973;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "NOGF-Watch-Watch-App-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "NOGF-Watch";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = NOGF.NOGF;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = NOGF.NOGF.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA93D0D72D732FEB006A4CF0 /* Build configuration list for PBXProject "NOGF" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA93D0E82D732FEB006A4CF0 /* Debug */,
+				BA93D0E92D732FEB006A4CF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA93D0EA2D732FEB006A4CF0 /* Build configuration list for PBXNativeTarget "NOGF" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA93D0EB2D732FEB006A4CF0 /* Debug */,
+				BA93D0EC2D732FEB006A4CF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BACE63812D8B1B210009764A /* Build configuration list for PBXNativeTarget "NOGF-Watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BACE63822D8B1B210009764A /* Debug */,
+				BACE63832D8B1B210009764A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA93D0D42D732FEB006A4CF0 /* Project object */;
+}

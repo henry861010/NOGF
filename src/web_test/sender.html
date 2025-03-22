@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POST with Token & Message</title>
+</head>
+<body>
+    <h2>Send POST Request with Message</h2>
+    
+    <textarea id="msg" placeholder="Type your message here..." rows="5" cols="40"></textarea><br>
+    <button onclick="sendPost()">Send Message</button>
+
+    <script>
+        async function sendPost() {
+            const url = "http://127.0.0.1:8000/sender";
+
+            const message = document.getElementById("msg").value;
+            const token = "1"; // Example token
+
+            const data = {
+                message: message
+            };
+
+            const response = await fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": token
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                const resData = await response.json();
+                alert("Success: " + JSON.stringify(resData));
+            } else {
+                alert("Request failed with status " + response.status);
+            }
+        }
+    </script>
+</body>
+</html>

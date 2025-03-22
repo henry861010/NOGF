@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +12,13 @@
             margin: auto;
             text-align: center;
         }
-        input, button {
+
+        input,
+        button {
             padding: 10px;
             margin: 5px;
         }
+
         #messages {
             border: 1px solid #ccc;
             height: 300px;
@@ -24,8 +28,9 @@
         }
     </style>
 </head>
+
 <body>
-    <h2>Sender</h2>
+    <h2>Receiver</h2>
     <div>
         <input type="text" id="client_id" placeholder="Enter Client ID" />
         <button onclick="connectWebSocket()">Connect</button>
@@ -48,17 +53,26 @@
                 return;
             }
 
-            ws = new WebSocket(`ws://${ip}:8000/ws/${client_id}/sender`);
+            ws = new WebSocket(`ws://${ip}:8000/receiver?token=1`);
 
-            ws.onopen = function() {
+            ws.onopen = function () {
                 addMessage("Connected to WebSocket server");
             };
 
-            ws.onmessage = function(event) {
-                addMessage(event.data);
+            ws.onmessage = function (event) {
+                try {
+                    const json_obj = JSON.parse(event.data);
+                    let old_time = new Date(json_obj.timestamp)
+                    let now_time = new Date()
+                    let latency = now_time - old_time
+                    addMessage(`latitude: ${json_obj.latitude}, longitude: ${json_obj.longitude}, latency: ${latency}`);
+                    addMessage(`old_time: ${old_time}, now_time: ${now_time}`);
+                } catch (error) {
+                    addMessage(event.data);
+                }
             };
 
-            ws.onclose = function() {
+            ws.onclose = function () {
                 addMessage("Disconnected from WebSocket server");
             };
         }
@@ -82,4 +96,5 @@
         }
     </script>
 </body>
+
 </html>
